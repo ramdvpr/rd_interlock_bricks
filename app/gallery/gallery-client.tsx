@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { Play } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 
@@ -132,10 +133,12 @@ export default function GalleryClient({ dynamicImages, dynamicVideos }: GalleryC
                                 >
                                     <CardContent className="p-0">
                                         <div className="relative aspect-[4/3] overflow-hidden">
-                                            <img
-                                                src={image.src || "/placeholder.svg"}
+                                            <Image
+                                                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${image.src || "/placeholder.svg"}`}
                                                 alt={image.alt}
-                                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                                fill
+                                                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                                unoptimized
                                             />
                                             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                             <div className="absolute bottom-0 left-0 right-0 p-4 text-white translate-y-full group-hover:translate-y-0 transition-transform duration-300">
@@ -178,7 +181,7 @@ export default function GalleryClient({ dynamicImages, dynamicVideos }: GalleryC
                                                 <video
                                                     controls
                                                     className="w-full h-full object-cover"
-                                                    src={video.src}
+                                                    src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${video.src}`}
                                                 >
                                                     Your browser does not support the video tag.
                                                 </video>

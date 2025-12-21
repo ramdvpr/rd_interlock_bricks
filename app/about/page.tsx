@@ -1,6 +1,7 @@
 import { CheckCircle2, Target, Eye, Award, Factory, Users } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
 export default function AboutPage() {
@@ -48,10 +49,12 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="relative aspect-square lg:aspect-auto lg:h-[500px] rounded-lg overflow-hidden">
-              <img
-                src="/modern-brick-manufacturing-factory.jpg"
+              <Image
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/modern-brick-manufacturing-factory.jpg`}
                 alt="RD Interlock Bricks Factory"
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
+                unoptimized
               />
             </div>
           </div>

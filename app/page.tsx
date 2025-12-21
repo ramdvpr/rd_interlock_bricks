@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { CONTACT_INFO, STATISTICS, WHATSAPP_NUMBER } from "@/lib/constants"
 import {
   ArrowRight,
@@ -459,10 +460,12 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 max-w-4xl mx-auto">
             <Card className="overflow-hidden border-2 hover:border-primary hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
               <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 relative overflow-hidden">
-                <img
-                  src="/6-inch-interlocking-bricks.jpg"
+                <Image
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/6-inch-interlocking-bricks.jpg`}
                   alt="6-Inch Interlocking Bricks"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  unoptimized
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
@@ -496,10 +499,12 @@ export default function Home() {
 
             <Card className="overflow-hidden border-2 hover:border-primary hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
               <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 relative overflow-hidden">
-                <img
-                  src="/8-inch-interlocking-bricks.jpg"
+                <Image
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/8-inch-interlocking-bricks.jpg`}
                   alt="8-Inch Interlocking Bricks"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  unoptimized
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>

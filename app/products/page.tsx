@@ -3,6 +3,7 @@ import { CONTACT_INFO, WHATSAPP_NUMBER } from "@/lib/constants"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function ProductsPage() {
   return (
@@ -28,10 +29,12 @@ export default function ProductsPage() {
             {/* 6-Inch Product */}
             <div className="space-y-8">
               <div className="relative aspect-video rounded-lg overflow-hidden border-2 border-border">
-                <img
-                  src="/6-inch-interlocking-bricks-stack.jpg"
+                <Image
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/6-inch-interlocking-bricks-stack.jpg`}
                   alt="6-Inch Interlocking Bricks"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
+                  unoptimized
                 />
               </div>
               <div className="space-y-6">
@@ -146,10 +149,12 @@ export default function ProductsPage() {
             {/* 8-Inch Product */}
             <div className="space-y-8">
               <div className="relative aspect-video rounded-lg overflow-hidden border-2 border-border">
-                <img
-                  src="/8-inch-interlocking-bricks-residential-constructio.jpg"
+                <Image
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/8-inch-interlocking-bricks-residential-constructio.jpg`}
                   alt="8-Inch Interlocking Bricks"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
+                  unoptimized
                 />
               </div>
               <div className="space-y-6">
