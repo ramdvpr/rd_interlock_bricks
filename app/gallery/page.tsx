@@ -1,12 +1,10 @@
-import { promises as fs } from 'fs';
-import path from 'path';
-import GalleryClient from './gallery-client';
-
-export const dynamic = 'force-dynamic'; // Ensure the page is dynamic to pick up new images on refresh
+import { promises as fs } from "fs";
+import path from "path";
+import GalleryClient from "./gallery-client";
 
 export default async function GalleryPage() {
-  const imagesDirectory = path.join(process.cwd(), 'public/gallery/image');
-  const videosDirectory = path.join(process.cwd(), 'public/gallery/video');
+  const imagesDirectory = path.join(process.cwd(), "public/gallery/image");
+  const videosDirectory = path.join(process.cwd(), "public/gallery/video");
 
   let dynamicImages: { src: string; alt: string; category: string }[] = [];
   let dynamicVideos: { src: string; title: string; category: string }[] = [];
@@ -18,7 +16,7 @@ export default async function GalleryPage() {
       .map((name) => ({
         src: `/gallery/image/${name}`,
         alt: name.replace(/\.[^/.]+$/, "").replace(/[-_]/g, " "),
-        category: 'Gallery',
+        category: "Gallery",
       }))
       .sort((a, b) => a.alt.localeCompare(b.alt));
   } catch (error) {
@@ -33,7 +31,7 @@ export default async function GalleryPage() {
       .map((name) => ({
         src: `/gallery/video/${name}`,
         title: name.replace(/\.[^/.]+$/, "").replace(/[-_]/g, " "),
-        category: 'Video',
+        category: "Video",
       }))
       .sort((a, b) => a.title.localeCompare(b.title));
   } catch (error) {
@@ -41,5 +39,10 @@ export default async function GalleryPage() {
     dynamicVideos = [];
   }
 
-  return <GalleryClient dynamicImages={dynamicImages} dynamicVideos={dynamicVideos} />;
+  return (
+    <GalleryClient
+      dynamicImages={dynamicImages}
+      dynamicVideos={dynamicVideos}
+    />
+  );
 }
