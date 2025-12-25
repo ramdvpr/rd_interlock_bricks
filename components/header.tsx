@@ -166,16 +166,12 @@ export function Header() {
             ref={menuRef}
             className={cn(
               "absolute right-4 top-4 w-[calc(100%-2rem)] max-w-sm md:max-w-md",
-              "bg-white/75 dark:bg-background/75 backdrop-blur-2xl",
+              "bg-white dark:bg-background",
               "rounded-3xl shadow-2xl",
               "border border-primary/30 ring-1 ring-white/20",
               "animate-in slide-in-from-top-4 fade-in duration-300",
               "max-h-[calc(100vh-2rem)] overflow-hidden flex flex-col",
             )}
-            style={{
-              WebkitBackdropFilter: "blur(20px) saturate(180%)",
-              backdropFilter: "blur(20px) saturate(180%)",
-            }}
           >
             {/* Header */}
             <div className="flex items-center justify-between px-5 py-4 border-b border-primary/15 bg-gradient-to-r from-primary/8 via-white/10 to-accent/8 backdrop-blur-sm">
