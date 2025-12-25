@@ -75,7 +75,7 @@ export default function GalleryClient({ dynamicImages, dynamicVideos }: GalleryC
             src: v.src,
             title: v.title,
             description: "Gallery Video",
-            format: v.title.toLowerCase().includes("whatsapp") ? "vertical" : "horizontal"
+            format: "vertical"
         }))
     ]
 
