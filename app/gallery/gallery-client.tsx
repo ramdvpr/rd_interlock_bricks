@@ -19,21 +19,21 @@ const videos = [
     {
         type: 'youtube',
         id: "UfPLP_S1D4s",
-        title: "Customer Testimonial",
+        title: "Testimonials Video",
         description: "Hear what our satisfied customers have to say about RD Interlock Bricks quality and service.",
         format: "vertical" as const,
     },
     {
         type: 'youtube',
         id: "wdPgjfgZaBI",
-        title: "Compound Wall Construction",
+        title: "Compound Wall",
         description: "Watch how our interlocking bricks make compound wall construction faster and more efficient.",
         format: "vertical" as const,
     },
     {
         type: 'youtube',
         id: "wLFTz4xvO0M",
-        title: "Residential Home Construction",
+        title: "Residential Home",
         description:
             "Complete residential home construction showcasing electrical and plumbing line setup within interlocking brick walls.",
         format: "vertical" as const,
